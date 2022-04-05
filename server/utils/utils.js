@@ -5,6 +5,7 @@
 // const JWTService = require("../services/JWTService.js");
 const log = require('loglevel');
 const { ValidationError } = require('joi');
+const { isAxiosError } = require('axios');
 const HttpError = require('./HttpError');
 
 /*
@@ -31,8 +32,8 @@ exports.handlerWrapper = (fn) =>
     });
   };
 
-exports.errorHandler = (err, req, res) => {
-  log.error('catch error:', err);
+exports.errorHandler = (err, req, res, _next) => {
+  if (!isAxiosError(err)) log.error('catch error:', err);
   if (err instanceof HttpError) {
     res.status(err.code).send({
       code: err.code,
@@ -43,6 +44,19 @@ exports.errorHandler = (err, req, res) => {
       code: 422,
       message: err.details.map((m) => m.message).join(';'),
     });
+  } else if (isAxiosError(err)) {
+    const errorObject = {
+      externalUrl: err.config.url,
+      data: err?.config?.data,
+      code: err.response?.data?.code || 500,
+      message:
+        err.response?.data?.message ||
+        err.response?.error ||
+        err.message ||
+        `Unknown error occured with external service call`,
+    };
+    log.warn(errorObject);
+    res.status(500).send(errorObject);
   } else {
     res.status(500).send({
       code: 500,
