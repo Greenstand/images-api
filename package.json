@@ -81,10 +81,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Greenstand/{project}.git"
+    "url": "git+https://github.com/Greenstand/images-api.git"
   },
   "bugs": {
-    "url": "https://github.com/Greenstand/{project}/issues"
+    "url": "https://github.com/Greenstand/images-api/issues"
   },
-  "homepage": "https://github.com/Greenstand/{project}#readme"
+  "homepage": "https://github.com/Greenstand/images-api#readme"
 }
