@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Greenstand/images-api/compare/v1.0.0...v1.0.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* force release ([95c5a6c](https://github.com/Greenstand/images-api/commit/95c5a6c47e5e33f7f5140d48ae5895f665c3c703))
+
 # 1.0.0 (2022-04-06)
 
 
