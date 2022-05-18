@@ -23,7 +23,7 @@ const resizeImageGet = async (req, res) => {
 };
 
 const resizeImageArbitraryDepth = async (req, res) => {
-  // image domain with paths with arbitrary depth (url/path/path)
+  // image domain with paths of arbitrary depth (url/path/path)
   const { url } = req;
   if (url.includes('/img/')) {
     const urlString = url.split('/img/')[1];
