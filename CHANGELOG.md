@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/Greenstand/images-api/compare/v1.0.1...v1.0.2) (2022-05-18)
+
+
+### Bug Fixes
+
+* support image domwin with paths with arbitrary depth ([fe7c174](https://github.com/Greenstand/images-api/commit/fe7c174417ac3439c4fa82796e147b7d882442d4))
+* tests ([3adfd63](https://github.com/Greenstand/images-api/commit/3adfd63fbeed3ccd1e373588ba63fa8719605c95))
+* update tests ([0a50c97](https://github.com/Greenstand/images-api/commit/0a50c978d23b2cf02e59b6ac69f6c94a5ca9783a))
+
 ## [1.0.1](https://github.com/Greenstand/images-api/compare/v1.0.0...v1.0.1) (2022-05-10)
 
 
