@@ -104,7 +104,7 @@ describe('image resizing tests', () => {
       const server = require('../server/app');
 
       const res = await request(server).get(
-        `/img/${imageFirstPart}/${imageSecondPart}`,
+        `/img/${imageDomainArbitraryPath}/${imageSecondPart}`,
       );
       expect(res.header['content-type']).to.eql('image/jpeg');
       expect(res.body).to.eql(Buffer.from('image'));
@@ -144,7 +144,7 @@ describe('image resizing tests', () => {
       const server = require('../server/app');
 
       const res = await request(server).get(
-        `/img/${imageFirstPart}/w=400,r=90,h=400,q=100/${imageSecondPart}`,
+        `/img/${imageDomainArbitraryPath}/w=400,r=90,h=400,q=100/${imageSecondPart}`,
       );
       expect(res.header['content-type']).to.eql('image/jpeg');
       expect(res.body).to.eql(Buffer.from('sharpImage'));
