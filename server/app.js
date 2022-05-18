@@ -44,10 +44,4 @@ app.use('/', router);
 // Global error handler
 app.use(errorHandler);
 
-const { version } = require('../package.json');
-
-app.get('*', function (req, res) {
-  res.status(200).send(version);
-});
-
 module.exports = app;
