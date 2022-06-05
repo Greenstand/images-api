@@ -1,7 +1,7 @@
 resources:
-  - ../../base
+- ../../base
 images:
-  - name: greenstand/images-api
-    newTag: 1.0.2
+- name: greenstand/images-api
+  newTag: 1.0.3
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
