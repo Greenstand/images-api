@@ -29,23 +29,24 @@ const resizeImageArbitraryDepth = async (req, res) => {
     const urlString = url.split('/img/')[1];
     const urlGroups = urlString.split('/');
 
-    const image = urlGroups.pop();
-    let params = urlGroups[urlGroups.length - 1];
-    if (
-      params.includes('h=') ||
-      params.includes('w=') ||
-      params.includes('r=') ||
-      params.includes('q=')
-    ) {
-      urlGroups.pop();
-    } else {
-      params = '';
-    }
-    const domain = urlGroups.join('/');
-    await paramsSchema.validateAsync({ image, domain }, { abortEarly: false });
+    const imageUrlArray = [];
+    const params = [];
 
-    const imageUrl = `https://${domain}/${image}`;
-    const imageBuffer = await resizeImage(imageUrl, params || '');
+    for (let i = 0; i < urlGroups.length; i += 1) {
+      if (
+        urlGroups[i].includes('h=') ||
+        urlGroups[i].includes('w=') ||
+        urlGroups[i].includes('r=') ||
+        urlGroups[i].includes('q=')
+      ) {
+        params.push(urlGroups[i]);
+      } else {
+        imageUrlArray.push(urlGroups[i]);
+      }
+    }
+
+    const imageUrl = `https://${imageUrlArray.join('/')}`;
+    const imageBuffer = await resizeImage(imageUrl, params.join(''));
 
     const readStream = new stream.PassThrough();
     readStream.end(imageBuffer);
