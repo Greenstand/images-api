@@ -1,5 +1,3 @@
-patchesStrategicMerge:
-- mapping.yaml
 images:
 - name: greenstand/images-api
   newTag: 1.0.3
