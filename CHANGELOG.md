@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/Greenstand/images-api/compare/v1.0.3...v1.0.4) (2023-01-30)
+
+
+### Bug Fixes
+
+* node engine ([c123e2c](https://github.com/Greenstand/images-api/commit/c123e2c5c19328de33e69afcab3c7dc60aa0e75c))
+* semantic release ([bf153d1](https://github.com/Greenstand/images-api/commit/bf153d1e0b711e023afaa6275d8a6db9187322c3))
+* trigger deployment ([5bc559c](https://github.com/Greenstand/images-api/commit/5bc559ca08df691e0b3cec9adf4fb30cbc87aab6))
+
 ## [1.0.3](https://github.com/Greenstand/images-api/compare/v1.0.2...v1.0.3) (2022-06-05)
 
 
