@@ -3,6 +3,8 @@ const Joi = require('joi');
 const sharp = require('sharp');
 
 const resizeImage = async (url, paramString) => {
+  console.log('url', url);
+  console.log('param', paramString);
   const paramsFilterSchema = Joi.object({
     h: Joi.number().integer().greater(0).default(0),
     w: Joi.number().integer().greater(0).default(0),
