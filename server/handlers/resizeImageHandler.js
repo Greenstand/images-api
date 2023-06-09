@@ -11,8 +11,10 @@ const paramsSchema = Joi.object({
 
 const resizeImageGet = async (req, res) => {
   await paramsSchema.validateAsync(req.params, { abortEarly: false });
+  console.log('params', req.params);
 
   const url = `https://${req.params.domain}/${req.params.image}`;
+  console.log('get-url', url);
   const imageBuffer = await resizeImage(url, req.params?.params || '');
 
   const readStream = new stream.PassThrough();
