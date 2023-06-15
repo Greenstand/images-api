@@ -1,3 +1,11 @@
+## [1.0.7](https://github.com/Greenstand/images-api/compare/v1.0.6...v1.0.7) (2023-06-15)
+
+
+### Bug Fixes
+
+* remove logs ([725a9ea](https://github.com/Greenstand/images-api/commit/725a9ea4736dc252b8462e8a3979ed70f4b08586))
+* remove logs ([80e14e8](https://github.com/Greenstand/images-api/commit/80e14e84899b742281b92616196982bb58eb3348))
+
 ## [1.0.6](https://github.com/Greenstand/images-api/compare/v1.0.5...v1.0.6) (2023-06-09)
 
 
