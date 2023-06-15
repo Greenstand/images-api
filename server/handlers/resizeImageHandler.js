@@ -11,10 +11,8 @@ const paramsSchema = Joi.object({
 
 const resizeImageGet = async (req, res) => {
   await paramsSchema.validateAsync(req.params, { abortEarly: false });
-  console.log('params', req.params);
 
   const url = `https://${req.params.domain}/${req.params.image}`;
-  console.log('get-url', url);
   const imageBuffer = await resizeImage(url, req.params?.params || '');
 
   const readStream = new stream.PassThrough();
@@ -27,7 +25,6 @@ const resizeImageGet = async (req, res) => {
 const resizeImageArbitraryDepth = async (req, res) => {
   // image domain with paths of arbitrary depth (url/path/path)
   const { url } = req;
-  console.log('received url', url)
   if (url.includes('/img/')) {
     const urlString = url.split('/img/')[1];
     const urlGroups = urlString.split('/');
